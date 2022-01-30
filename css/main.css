@@ -1,0 +1,119 @@
+:root {
+    --color-bright-orange: hsl(31, 77%, 52%);
+    --color-dark-cyan: hsl(184, 100%, 22%);
+    --color-very-dark-cyan: hsl(179, 100%, 13%);
+    --color-transparent-white: hsla(0, 0%, 100%, 0.75);
+    --color-very-light-gray: hsl(0, 0%, 95%);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--color-very-light-gray);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    width: 250px;
+    height: 400px;
+    padding: 2rem;
+}
+
+.card:nth-child(1) {
+    background-color: var(--color-bright-orange);
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.card:nth-child(2) {
+    background-color: var(--color-dark-cyan);
+}
+
+.card:nth-child(3) {
+    background-color: var(--color-very-dark-cyan);
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        margin: 2rem auto;
+    }
+
+    .card:nth-child(1) {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .card:nth-child(3) {
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+}
+
+.card-title {
+    color: white;
+}
+
+.card-text {
+    font-size: 13px;
+    color: var(--color-transparent-white);
+    margin-bottom: 6rem;
+}
+
+a.card-actions {
+    padding: 0.7rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    background-color: var(--color-very-light-gray);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card:nth-child(1) > div > a.card-actions {
+    color: var(--color-bright-orange);
+}
+
+.card:nth-child(2) > div > a.card-actions {
+    color: var(--color-dark-cyan);
+}
+
+.card:nth-child(3) > div > a.card-actions {
+    color: var(--color-very-dark-cyan);
+}
+
+.card > div > a.card-actions:hover {
+    transition: background 0.3s ease;
+    background-color: transparent;
+    border: medium solid white;
+    color: white;
+}
+
+.attribution {
+    width: 100%;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
